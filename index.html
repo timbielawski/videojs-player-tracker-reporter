@@ -22,8 +22,11 @@
     (function(window, videojs) {
       var player = window.player = videojs('videojs-player-tracker-reporter-player');
       player.playerTrackerReporter({
-        get_tracking_url,
-        put_tracking_url
+        params:{
+          videoKey: "video key / id"
+        },
+        get_tracking_url: "tracking api url",
+        put_tracking_url: "tracking api url"
       });
     }(window, window.videojs));
   </script>

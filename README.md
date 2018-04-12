@@ -37,9 +37,12 @@ This is the simplest case. Get the script in whatever way you prefer and include
   var player = videojs('my-video');
 
   player.playerTrackerReporter({
-    get_tracking_url,
-    put_tracking_url
-  });
+        params:{
+          videoKey: "video key / id"
+        },
+        get_tracking_url: "tracking api url",
+        put_tracking_url: "tracking api url"
+      });
 </script>
 ```
 
@@ -58,9 +61,12 @@ require('videojs-player-tracker-reporter');
 var player = videojs('my-video');
 
 player.playerTrackerReporter({
-  get_tracking_url,
-  put_tracking_url
-});
+        params:{
+          videoKey: "video key / id"
+        },
+        get_tracking_url: "tracking api url",
+        put_tracking_url: "tracking api url"
+      });
 ```
 
 ### RequireJS/AMD
@@ -71,10 +77,13 @@ When using with RequireJS (or another AMD library), get the script in whatever w
 require(['video.js', 'videojs-player-tracker-reporter'], function(videojs) {
   var player = videojs('my-video');
 
-  player.playerTrackerReporter({
-    get_tracking_url,
-    put_tracking_url
-  });
+  player.playerTrackerReporter({{
+        params:{
+          videoKey: "video key / id"
+        },
+        get_tracking_url: "tracking api url",
+        put_tracking_url: "tracking api url"
+      });
 });
 ```
 
