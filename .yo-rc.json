@@ -1,0 +1,14 @@
+{
+  "generator-videojs-plugin": {
+    "scope": "",
+    "name": "videojs-player-tracker-reporter",
+    "description": "Track the plays and display on video player",
+    "author": "Tim Bielawski",
+    "license": "mit",
+    "sass": true,
+    "ie8": false,
+    "docs": true,
+    "lang": false,
+    "husky": "test"
+  }
+}

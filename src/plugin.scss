@@ -1,0 +1,9 @@
+// Sass for videojs-player-tracker-reporter
+
+.video-js {
+
+  // This class is added to the video.js element by the plugin by default.
+  &.vjs-videojs-player-tracker-reporter {
+    display: block;
+  }
+}
