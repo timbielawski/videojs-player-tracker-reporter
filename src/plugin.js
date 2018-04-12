@@ -1,6 +1,7 @@
 import videojs from 'video.js';
 import {version as VERSION} from '../package.json';
 import tracker from './tracking/tracker';
+import counter from './counter/counter';
 
 // Default options for the plugin.
 const defaults = {};
@@ -21,7 +22,7 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  *  
  */
 
-const displayCounter = (player, options) => {
+const displayCounter = (player, options, data) => {
   let counterContainer = document.createElement("div");
   counterContainer.className = "counter-container";
 
@@ -48,7 +49,9 @@ const displayCounter = (player, options) => {
  *           A plain object containing options for the plugin.
  */
 const onPlayerReady = (player, options) => {
-  displayCounter(player, options);
+  counter.init(player, options, (data)=>{
+    displayCounter(player, options, data);
+  });
   player.addClass('vjs-videojs-player-tracker-reporter');
   tracker.init(player, options);
 };
