@@ -78,7 +78,7 @@ const tracker = {
     const data = getStickedParams(commonParams, individualParams);
     const url = this.options.url + '?' + data.join('&');
 
-    sendXMLHttpRequest(url);
+    sendXMLHttpRequest(url, 'PUT', null);
   },
 
   /**
@@ -89,9 +89,15 @@ const tracker = {
    * @function startTracking
    */
   startTracking() {
-    playerShowTracking.apply(this);
-    contentPlayTracking.apply(this);
-    videoStartTracking.apply(this);
+    if(this.options.playerShowTracking){
+      playerShowTracking.apply(this);
+    }
+    if(this.options.contentPlayTracking){
+      contentPlayTracking.apply(this);
+    }
+    if(this.options.videoStartTracking){
+      videoStartTracking.apply(this);
+    }
   },
 
   /**
@@ -113,4 +119,4 @@ const tracker = {
   }
 };
 
-export default sbtracker;
+export default tracker;

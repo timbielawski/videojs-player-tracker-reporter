@@ -43,7 +43,7 @@ const videoStartTracking = function() {
           curr_ts: currentTime
         };
 
-        this.postTrackingEvent('video_start', additionalParams);
+        this.putTrackingEvent('video_start', additionalParams);
       }
 
     }, 1000);

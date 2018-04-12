@@ -5,7 +5,7 @@
  */
 const contentPlayTracking = function() {
   this.player.one('play', () => {
-    this.postTrackingEvent('content_play', {file: this.options.videoUrl || null});
+    this.putTrackingEvent('content_play', {file: this.options.videoUrl || null});
   });
 };
 

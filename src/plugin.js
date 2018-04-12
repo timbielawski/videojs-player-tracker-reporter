@@ -1,5 +1,6 @@
 import videojs from 'video.js';
 import {version as VERSION} from '../package.json';
+import tracker from './tracking/tracker';
 
 // Default options for the plugin.
 const defaults = {};
@@ -7,6 +8,30 @@ const defaults = {};
 // Cross-compatibility for Video.js 5 and 6.
 const registerPlugin = videojs.registerPlugin || videojs.plugin;
 // const dom = videojs.dom || videojs;
+
+/**
+ * Function that gets get the video played counts and displays it
+ * on the toolbar
+ *  
+ * @function displayCounter
+ * @param    {Player} player
+ *           A Video.js player object.
+ *
+ * @param    {Object} [options={}]
+ *  
+ */
+
+const displayCounter = (player, options) => {
+  let counterContainer = document.createElement("div");
+  counterContainer.className = "counter-container";
+
+  let countContainer = document.createElement("span");
+  countContainer.className = "count";
+
+  counterContainer.appendChild(countContainer);
+  player.controlBar.el().insertBefore(counterContainer, player.controlBar.fullscreenToggle.el());
+
+}
 
 /**
  * Function to invoke when the player is ready.
@@ -23,7 +48,9 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  *           A plain object containing options for the plugin.
  */
 const onPlayerReady = (player, options) => {
+  displayCounter(player, options);
   player.addClass('vjs-videojs-player-tracker-reporter');
+  tracker.init(player, options);
 };
 
 /**

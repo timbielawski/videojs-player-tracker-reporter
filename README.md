@@ -1,6 +1,6 @@
 # videojs-player-tracker-reporter
 
-Track the plays and display on video player
+Track the plays and display on video player (WORK IN PROGRESS)
 
 ## Table of Contents
 

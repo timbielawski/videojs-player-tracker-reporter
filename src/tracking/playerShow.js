@@ -5,7 +5,7 @@
  */
 const playerShowTracking = function() {
   this.player.one('loadstart', () => {
-    this.postTrackingEvent('player_show', {});
+    this.putTrackingEvent('player_show', {});
     if (this.options.hasAds) {
       document.dispatchEvent(new Event('wjplayerWithAdsLoadstart'));
     }
