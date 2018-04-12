@@ -21,7 +21,10 @@
   <script>
     (function(window, videojs) {
       var player = window.player = videojs('videojs-player-tracker-reporter-player');
-      player.playerTrackerReporter();
+      player.playerTrackerReporter({
+        get_tracking_url,
+        put_tracking_url
+      });
     }(window, window.videojs));
   </script>
 </body>

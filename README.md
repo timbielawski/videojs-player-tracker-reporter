@@ -36,7 +36,10 @@ This is the simplest case. Get the script in whatever way you prefer and include
 <script>
   var player = videojs('my-video');
 
-  player.playerTrackerReporter();
+  player.playerTrackerReporter({
+    get_tracking_url,
+    put_tracking_url
+  });
 </script>
 ```
 
@@ -54,7 +57,10 @@ require('videojs-player-tracker-reporter');
 
 var player = videojs('my-video');
 
-player.playerTrackerReporter();
+player.playerTrackerReporter({
+  get_tracking_url,
+  put_tracking_url
+});
 ```
 
 ### RequireJS/AMD
@@ -65,7 +71,10 @@ When using with RequireJS (or another AMD library), get the script in whatever w
 require(['video.js', 'videojs-player-tracker-reporter'], function(videojs) {
   var player = videojs('my-video');
 
-  player.playerTrackerReporter();
+  player.playerTrackerReporter({
+    get_tracking_url,
+    put_tracking_url
+  });
 });
 ```
 
