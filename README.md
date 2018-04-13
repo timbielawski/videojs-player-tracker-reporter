@@ -1,8 +1,8 @@
 # videojs-player-tracker-reporter
 
-Track the plays and display on video player using your own API.
+Tracks events and can display views on the videojs toolbar using your own API.
 
-The plugin will fire a GET for a configured getTrackingUrl
+The plugin will fire a GET on init for a configured getTrackingUrl
 
 Depending of what event is configured see examples, the plugin will fire a PUT request to
 a configured putTrackingUrl
