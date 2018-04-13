@@ -13,7 +13,7 @@ const sendXMLHttpRequest = function(url, method, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.onreadystatechange = function() {
-      if (this.status == 200) {
+      if (this.status == 200 && callback) {
          callback(xhr.responseText);
       }
   };
