@@ -1,6 +1,15 @@
 # videojs-player-tracker-reporter
 
-Track the plays and display on video player
+Track the plays and display on video player using your own API
+The plugin will fire a GET for a configured getTrackingUrl
+
+Depending of what event is configured see examples, the plugin will fire a PUT request to
+a configured putTrackingUrl
+
+The params in the config allows you to set request params, in the example below the params
+will get generate the following URL with the getTrackingUrl set as http://api.myvideservice.com
+
+http://api.myvideoservice.com?videoKey=abcxyz
 
 ## Table of Contents
 
@@ -38,7 +47,7 @@ This is the simplest case. Get the script in whatever way you prefer and include
 
   player.playerTrackerReporter({
         params:{
-          videoKey: "video key / id"
+          videoKey: "abcxyz"
         },
         getTrackingUrl: "tracking api url",
         putTrackingUrl: "tracking api url",
@@ -65,7 +74,7 @@ var player = videojs('my-video');
 
 player.playerTrackerReporter({
         params:{
-          videoKey: "video key / id"
+          videoKey: "abcxyz"
         },
         getTrackingUrl: "tracking api url",
         putTrackingUrl: "tracking api url",
@@ -85,7 +94,7 @@ require(['video.js', 'videojs-player-tracker-reporter'], function(videojs) {
 
   player.playerTrackerReporter({{
         params:{
-          videoKey: "video key / id"
+          videoKey: "abcxyz"
         },
         getTrackingUrl: "tracking api url",
         putTrackingUrl: "tracking api url",
