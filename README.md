@@ -1,6 +1,6 @@
 # videojs-player-tracker-reporter
 
-Track the plays and display on video player (WORK IN PROGRESS)
+Track the plays and display on video player
 
 ## Table of Contents
 
@@ -40,8 +40,8 @@ This is the simplest case. Get the script in whatever way you prefer and include
         params:{
           videoKey: "video key / id"
         },
-        get_tracking_url: "tracking api url",
-        put_tracking_url: "tracking api url",
+        getTrackingUrl: "tracking api url",
+        putTrackingUrl: "tracking api url",
         playerShowTracking: false,
         contentPlayTracking: true,
         videoStartTracking: false,
@@ -67,8 +67,8 @@ player.playerTrackerReporter({
         params:{
           videoKey: "video key / id"
         },
-        get_tracking_url: "tracking api url",
-        put_tracking_url: "tracking api url",
+        getTrackingUrl: "tracking api url",
+        putTrackingUrl: "tracking api url",
         playerShowTracking: false,
         contentPlayTracking: true,
         videoStartTracking: false,
@@ -87,8 +87,8 @@ require(['video.js', 'videojs-player-tracker-reporter'], function(videojs) {
         params:{
           videoKey: "video key / id"
         },
-        get_tracking_url: "tracking api url",
-        put_tracking_url: "tracking api url",
+        getTrackingUrl: "tracking api url",
+        putTrackingUrl: "tracking api url",
         playerShowTracking: false,
         contentPlayTracking: true,
         videoStartTracking: false,
