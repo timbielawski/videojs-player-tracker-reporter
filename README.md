@@ -41,7 +41,10 @@ This is the simplest case. Get the script in whatever way you prefer and include
           videoKey: "video key / id"
         },
         get_tracking_url: "tracking api url",
-        put_tracking_url: "tracking api url"
+        put_tracking_url: "tracking api url",
+        playerShowTracking: false,
+        contentPlayTracking: true,
+        videoStartTracking: false,
       });
 </script>
 ```
@@ -65,7 +68,10 @@ player.playerTrackerReporter({
           videoKey: "video key / id"
         },
         get_tracking_url: "tracking api url",
-        put_tracking_url: "tracking api url"
+        put_tracking_url: "tracking api url",
+        playerShowTracking: false,
+        contentPlayTracking: true,
+        videoStartTracking: false,
       });
 ```
 
@@ -82,7 +88,10 @@ require(['video.js', 'videojs-player-tracker-reporter'], function(videojs) {
           videoKey: "video key / id"
         },
         get_tracking_url: "tracking api url",
-        put_tracking_url: "tracking api url"
+        put_tracking_url: "tracking api url",
+        playerShowTracking: false,
+        contentPlayTracking: true,
+        videoStartTracking: false,
       });
 });
 ```
