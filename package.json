@@ -1,6 +1,6 @@
 {
   "name": "videojs-player-tracker-reporter",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Track the plays and display on video player",
   "main": "dist/videojs-player-tracker-reporter.cjs.js",
   "module": "dist/videojs-player-tracker-reporter.es.js",
