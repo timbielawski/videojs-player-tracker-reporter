@@ -24,12 +24,11 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
 
 const displayCounter = (player, options, count) => {
   let counterContainer = document.createElement("div");
-  counterContainer.className = "counter-container";
+  counterContainer.className = "vjs-videojs-player-tracker-reporter counter-container";
 
   let countContainer = document.createElement("span");
-  countContainer.className = "count";
-  countContainer.value = count;
-
+  countContainer.className = "vjs-videojs-player-tracker-reporter count";
+  countContainer.appendChild( document.createTextNode(count + ' views') );
   counterContainer.appendChild(countContainer);
   player.controlBar.el().insertBefore(counterContainer, player.controlBar.fullscreenToggle.el());
 
@@ -50,8 +49,11 @@ const displayCounter = (player, options, count) => {
  *           A plain object containing options for the plugin.
  */
 const onPlayerReady = (player, options) => {
-  counter.init(player, options, (count)=>{
-    displayCounter(player, options, count);
+  counter.init(player, options);
+  counter.getCount((count)=>{
+    if(count){
+      displayCounter(player, options, count);
+    }
   });
   player.addClass('vjs-videojs-player-tracker-reporter');
   tracker.init(player, options);

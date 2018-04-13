@@ -64,8 +64,8 @@ const counter = {
    */
   getCount(callback) {
     const commonParams = this.getUpdatedParams();
-    const data = getStickedParams(commonParams, individualParams);
-    const url = this.options.url + '?' + data.join('&');
+    const data = getStickedParams(commonParams);
+    const url = this.options.getTrackingUrl + '?' + data.join('&');
     sendXMLHttpRequest(url, 'GET', callback);
   },
 
@@ -80,12 +80,11 @@ const counter = {
    * @param    {Object} [options={}]
    *           A plain object containing options for the plugin.
    */
-  init(player, options, callback) {
+  init(player, options) {
     this.player = player;
     this.options = options;
     this.setInitialParams();
-    this.getCount(callback);
   }
 };
 
-export default tracker;
+export default counter;

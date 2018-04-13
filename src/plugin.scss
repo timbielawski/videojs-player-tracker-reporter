@@ -4,24 +4,15 @@
 
   // This class is added to the video.js element by the plugin by default.
   &.vjs-videojs-player-tracker-reporter {
-    display: block;
+    .counter-container {
+      display: block;
+    }
   }
 
-  &.counter-container {
-    width: 40px;
-    height: 20px;
-    background: red;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    float:left;
-    margin:1px;
-  }
-
-  &.count {
-    line-height: 5px;
-    color:white;
-    margin-left:2px;
-    font-size:8px;
+  &.vjs-videojs-player-tracker-reporter {
+    .count {
+      line-height: 3em;
+      color:white;
+    }
   }
 }

@@ -12,9 +12,13 @@
 const sendXMLHttpRequest = function(url, method, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
-    xhr.withCredentials = true;
-    xhr.onload = callback;
-    xhr.send(null);
+    xhr.onreadystatechange = function() {
+      if (this.status == 200) {
+         callback(xhr.responseText);
+      }
+  };
+    xhr.send();
   };
   
   export default sendXMLHttpRequest;
+  

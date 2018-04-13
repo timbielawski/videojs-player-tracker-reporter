@@ -76,8 +76,7 @@ const tracker = {
     individualParams.action_name = actionName;
     const commonParams = this.getUpdatedParams();
     const data = getStickedParams(commonParams, individualParams);
-    const url = this.options.url + '?' + data.join('&');
-
+    const url = this.options.putTrackingUrl + '?' + data.join('&');
     sendXMLHttpRequest(url, 'PUT', null);
   },
 
