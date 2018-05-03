@@ -23,15 +23,22 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  */
 
 const displayCounter = (player, options, count) => {
+  var countContainers = document.getElementsByClassName("counter-container");
+  if(countContainers.length > 0){
+   for(let i = 0; i < countContainers.length; i++){
+     if(countContainers[i]){
+      countContainers[i].remove();
+     }
+   }
+  }
+
   let counterContainer = document.createElement("div");
   counterContainer.className = "vjs-videojs-player-tracker-reporter counter-container";
-
   let countContainer = document.createElement("span");
   countContainer.className = "vjs-videojs-player-tracker-reporter count";
   countContainer.appendChild( document.createTextNode(count + ' views') );
   counterContainer.appendChild(countContainer);
   player.controlBar.el().insertBefore(counterContainer, player.controlBar.fullscreenToggle.el());
-
 }
 
 /**
